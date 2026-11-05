@@ -1,0 +1,158 @@
+/* Shared print stylesheet for the Classroom AI Paperwork Pack.
+   All pages size to US Letter and print cleanly in black and white. */
+
+:root {
+  --ink: #1c1c1c;
+  --soft: #4a4a4a;
+  --rule: #8a8a8a;
+}
+
+@page {
+  size: Letter;
+  margin: 0.75in 0.8in;
+  @bottom-left {
+    content: "Free to print and adapt for your classroom";
+    font-family: sans-serif;
+    font-size: 8pt;
+    color: #555;
+  }
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+    font-family: sans-serif;
+    font-size: 8pt;
+    color: #555;
+  }
+}
+
+@page :first {
+  @bottom-left { content: ""; }
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 10.5pt;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+body { margin: 0; }
+
+h1 {
+  font-size: 20pt;
+  line-height: 1.2;
+  margin: 0 0 0.15in 0;
+  border-bottom: 2.5pt solid var(--ink);
+  padding-bottom: 0.06in;
+}
+
+h2 {
+  font-size: 13pt;
+  margin: 0.22in 0 0.08in 0;
+  padding-bottom: 2pt;
+  border-bottom: 1pt solid var(--rule);
+}
+
+h3 {
+  font-size: 11pt;
+  margin: 0.16in 0 0.04in 0;
+}
+
+p { margin: 0 0 0.08in 0; }
+
+ul, ol { margin: 0.04in 0 0.1in 0; padding-left: 0.24in; }
+li { margin-bottom: 0.03in; }
+
+.kicker {
+  font-size: 8.5pt;
+  letter-spacing: 1.2pt;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-bottom: 0.03in;
+}
+
+.intro {
+  color: var(--soft);
+  margin-bottom: 0.18in;
+}
+
+/* A copy-paste block teachers can lift straight into their own documents. */
+.copy-block {
+  border: 1.25pt solid var(--ink);
+  border-left: 6pt solid var(--ink);
+  padding: 0.11in 0.14in;
+  margin: 0.1in 0 0.06in 0;
+  background: #f7f7f7;
+  break-inside: avoid;
+}
+.copy-block p, .copy-block ul, .copy-block ol, .copy-block li { margin-bottom: 0.05in; }
+.copy-block p:last-child, .copy-block ul:last-child, .copy-block ol:last-child { margin-bottom: 0; }
+
+.copy-label {
+  font-size: 8.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  color: var(--soft);
+  margin: 0.14in 0 0.02in 0;
+}
+.copy-label:first-of-type { margin-top: 0.05in; }
+
+/* Fillable worksheet lines and checkboxes render in any browser or printer. */
+.write-line {
+  display: block;
+  border-bottom: 0.75pt solid var(--rule);
+  height: 0.28in;
+}
+
+.check-item {
+  margin: 0 0 0.09in 0;
+  padding-left: 0.26in;
+  text-indent: -0.26in;
+}
+.checkbox {
+  display: inline-block;
+  width: 0.13in;
+  height: 0.13in;
+  border: 1pt solid var(--ink);
+  margin-right: 0.09in;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.08in 0;
+  font-size: 9.5pt;
+}
+th, td {
+  border: 0.75pt solid var(--rule);
+  padding: 4pt 6pt;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #efefef; font-size: 9pt; }
+
+.callout {
+  border: 1pt dashed var(--rule);
+  padding: 0.09in 0.13in;
+  margin: 0.12in 0;
+  break-inside: avoid;
+}
+.callout-title {
+  font-weight: bold;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.8pt;
+  margin-bottom: 0.04in;
+}
+
+.blank { display: inline-block; min-width: 0.8in; border-bottom: 0.75pt solid var(--rule); }
+
+.page-break { break-before: page; }
+
+.note { font-size: 9pt; color: var(--soft); }
+.signature-row { margin-top: 0.35in; break-inside: avoid; }
+.signature-line {
+  display: inline-block;
+  width: 2.3in;
+  border-bottom: 0.75pt solid var(--ink);
+  margin-right: 0.35in;
+}

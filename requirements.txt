@@ -1,0 +1,2 @@
+# Local PDF rendering (no signup, no API key, runs fully offline once installed).
+weasyprint>=62
