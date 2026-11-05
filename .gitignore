@@ -1,4 +1,9 @@
-pdf/
-__pycache__/
-.pytest_cache/
 *.pyc
+.env
+.env.*
+.pytest_cache/
+.venv/
+__pycache__/
+dist/*.tmp
+node_modules/
+pdf/
